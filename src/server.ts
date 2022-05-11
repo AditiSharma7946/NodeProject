@@ -1,7 +1,7 @@
 import express, { Application, Router } from 'express';
 import bodyParser from 'body-parser';
 import todosRouter from './routers/TodosRouter';
-import pool from './dbconfig/dbconnector';
+import pool from './dbconfig/dbconfig';
 
 class Server {
     private app;

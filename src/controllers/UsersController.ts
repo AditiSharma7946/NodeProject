@@ -1,22 +1,22 @@
 import pool from '../dbconfig/dbconfig';
 
-class TodosController {
+class UsersController {
 
     public async get(req, res) {
         try {
             const client = await pool.connect();
 
-            const sql = "SELECT * FROM todos";
+            const sql = "SELECT * FROM users";
             const { rows } = await client.query(sql);
-            const todos = rows;
+            const users = rows;
 
             client.release();
 
-            res.send(todos);
+            res.send(users);
         } catch (error) {
             res.status(400).send(error);
         }
     }
 }
 
-export default TodosController;
+export default UsersController;
